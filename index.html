@@ -1,450 +1,138 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZiZiMyon｜個人タクシー法令講座</title>
-<meta name="description" content="現役個人タクシー事業者が届ける、個人タクシー法令試験対策講座のご案内ページです。動画でつかみ、条文で確かめ、問題で身につける、全20回の講座です。">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>本試験問題アーカイブ｜ZiZiMyonの個人タクシー法令試験対策</title>
 <style>
-  :root{
-    --bg:#FFF8EA;
-    --surface:#FFFDF6;
-    --ink:#2B2B2B;
-    --muted:#6B6257;
-    --navy:#1F3A5F;
-    --navy-deep:#16294A;
-    --gold:#C9A227;
-    --line:#E4D9BE;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
-    line-height:1.9;
-    font-size:16px;
-  }
-  .serif{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif}
-  a{color:var(--navy);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  .kicker{
-    font-size:12px;letter-spacing:.28em;color:var(--gold);
-    font-weight:700;text-transform:uppercase;margin-bottom:14px;
-  }
-  h2{
-    font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
-    font-size:clamp(26px,4.5vw,38px);line-height:1.5;color:var(--navy-deep);
-    font-weight:600;margin-bottom:16px;
-  }
-  .lead{color:var(--muted);max-width:720px}
-  section{padding:84px 0}
-  /* header */
-  header{
-    position:sticky;top:0;z-index:10;background:rgba(255,248,234,.94);
-    border-bottom:1px solid var(--line);backdrop-filter:blur(4px);
-  }
-  .header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-  .logo{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;color:var(--navy-deep);font-size:17px}
-  .logo .mark{
-    display:inline-block;background:var(--navy);color:#fff;border-radius:6px;
-    padding:0 8px;margin-right:8px;font-size:14px;line-height:1.7;
-  }
-  nav{display:flex;gap:22px;font-size:14px;flex-wrap:wrap}
-  nav a{color:var(--ink)}
-  nav a.ext{color:var(--navy);font-weight:700}
-  @media (max-width:640px){ nav{gap:12px;font-size:13px} .logo{font-size:15px} }
-  /* hero */
-  .hero{padding:96px 0 72px;text-align:left}
-  .hero .for{color:var(--muted);letter-spacing:.12em;font-size:14px;margin-bottom:22px}
-  .hero h1{
-    font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
-    font-size:clamp(34px,6.5vw,58px);line-height:1.45;color:var(--navy-deep);font-weight:600;margin-bottom:26px;
-  }
-  .hero h1 em{font-style:normal;color:var(--navy);border-bottom:3px solid var(--gold)}
-  .hero .sub{font-size:clamp(16px,2.4vw,19px);color:var(--ink);max-width:640px;margin-bottom:10px}
-  .hero .from{color:var(--muted);margin-bottom:36px}
-  .btns{display:flex;gap:14px;flex-wrap:wrap}
-  .btn{
-    display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;
-    border:1px solid var(--navy);
-  }
-  .btn.primary{background:var(--navy);color:#fff}
-  .btn.ghost{background:transparent;color:var(--navy)}
-  .btn:hover{text-decoration:none;opacity:.88}
-  /* entries */
-  .entries{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 0 8px}
-  @media (max-width:760px){ .entries{grid-template-columns:1fr} }
-  .entry{
-    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;
-  }
-  .entry .no{color:var(--gold);font-weight:700;letter-spacing:.2em;font-size:13px;margin-bottom:8px}
-  .entry a{font-weight:700}
-  /* guide */
-  .guide-box{
-    background:var(--surface);border:1px solid var(--line);border-radius:16px;
-    padding:30px;margin-top:30px;max-width:760px;
-  }
-  .guide-box label{font-weight:700;display:block;margin-bottom:10px}
-  .guide-box select{
-    width:100%;font-size:16px;padding:12px;border-radius:10px;border:1px solid var(--line);
-    background:#fff;color:var(--ink);
-  }
-  .guide-result{margin-top:24px;border-top:1px dashed var(--line);padding-top:20px}
-  .guide-result h3{
-    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:22px;color:var(--navy-deep);margin-bottom:8px;
-  }
-  .guide-result p{color:var(--muted);margin-bottom:14px}
-  .guide-result a{font-weight:700}
-  /* curriculum */
-  .blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  @media (max-width:760px){ .blocks{grid-template-columns:1fr} }
-  .block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
-  .block .range{color:var(--muted);font-size:14px}
-  .block .no{float:right;color:var(--gold);font-weight:700;font-size:20px}
-  .block h3{
-    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:21px;color:var(--navy-deep);
-    margin:10px 0 10px;line-height:1.6;
-  }
-  .block p{color:var(--muted);font-size:15px}
-  .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-  .tags span{
-    font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:2px 12px;background:#fff;color:var(--ink);
-  }
-  .center-link{margin-top:28px}
-  /* steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
-  .step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
-  .step .no{color:var(--gold);font-weight:700;font-size:20px;margin-bottom:8px}
-  .step h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px;color:var(--navy-deep);margin-bottom:8px}
-  .step p{color:var(--muted);font-size:15px}
-  /* manga */
-  .manga-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-  @media (max-width:640px){ .manga-list{grid-template-columns:1fr} }
-  .manga-item{
-    background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 22px;
-    display:flex;justify-content:space-between;align-items:center;gap:12px;
-  }
-  .manga-item .name{font-weight:700}
-  .manga-item a{white-space:nowrap;font-weight:700;font-size:14px}
-  .subhead{
-    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:21px;color:var(--navy-deep);
-    margin:38px 0 6px;
-  }
-  /* practice cards */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  @media (max-width:760px){ .cards{grid-template-columns:1fr} }
-  .card{background:var(--navy);color:#fff;border-radius:16px;padding:28px}
-  .card .kind{color:var(--gold);letter-spacing:.24em;font-size:12px;font-weight:700;margin-bottom:10px}
-  .card h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px;margin-bottom:10px;line-height:1.6}
-  .card p{color:#D8DEE9;font-size:14.5px;margin-bottom:18px}
-  .card a{color:#fff;font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:2px}
-  .card a:hover{text-decoration:none;opacity:.85}
-  /* about */
-  .about-note{
-    background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:34px;max-width:820px;
-  }
-  .about-note .big{
-    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(20px,3.4vw,26px);
-    color:var(--navy-deep);line-height:1.8;margin-bottom:8px;
-  }
-  .about-body{max-width:820px;color:var(--ink);margin-top:26px}
-  .about-body p{margin-bottom:16px}
-  .sign{color:var(--muted);margin-top:22px;font-size:14.5px}
-  /* faq */
-  .faq-list{max-width:820px;margin-top:26px}
-  details{
-    background:var(--surface);border:1px solid var(--line);border-radius:12px;
-    padding:18px 22px;margin-bottom:12px;
-  }
-  summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"＋";color:var(--gold);font-weight:700}
-  details[open ] summary::after{content:"－"}
-  details p{color:var(--muted);margin-top:12px}
-  /* final */
-  .final{text-align:left;padding:84px 0}
-  /* footer */
-  footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--muted);font-size:14px}
-  .footer-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-  .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+  :root { --navy:#18365d; --navy-d:#102642; --gold:#f0b23c; --ink:#1e2228; --muted:#606c78; --line:#cdd6e0; --bg:#fdfdfa; --card:#ffffff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; }
+  header { background:var(--navy); color:#fff; padding:34px 18px 26px; text-align:center; border-bottom:6px solid var(--gold); }
+  header .brand { font-size:14px; letter-spacing:.12em; color:#d7e4f3; }
+  header h1 { margin:6px 0 4px; font-size:30px; }
+  header p { margin:0; color:#d7e4f3; font-size:15px; }
+  main { max-width:880px; margin:0 auto; padding:26px 16px 40px; }
+  .intro { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; }
+  .intro p { margin:6px 0; }
+  .note { color:var(--muted); font-size:13.5px; }
+  h2.term { margin:30px 0 6px; font-size:22px; color:var(--navy-d); border-left:6px solid var(--gold); padding-left:10px; }
+  .term-sub { color:var(--muted); margin:0 0 14px; font-size:14px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .card h3 { margin:0 0 2px; font-size:18px; color:var(--navy-d); }
+  .card .date { color:var(--muted); font-size:13px; margin-bottom:10px; }
+  .card .links { display:flex; gap:8px; flex-wrap:wrap; }
+  a.btn { display:inline-block; padding:7px 14px; border-radius:999px; text-decoration:none; font-size:14px; font-weight:700; }
+  a.pdf { background:var(--navy); color:#fff; }
+  a.yt { background:#fff; color:#c4302b; border:1.5px solid #c4302b; }
+  span.soon { display:inline-block; padding:7px 14px; border-radius:999px; font-size:14px; font-weight:700; background:#eef1f4; color:var(--muted); }
+  section.howto { margin-top:34px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; }
+  section.howto h2 { margin:0 0 8px; font-size:19px; color:var(--navy-d); }
+  section.howto ol { margin:6px 0 6px 20px; padding:0; }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding:22px 12px 30px; }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="wrap header-in">
-    <a class="logo" href="#"><span class="mark">学</span>ZiZiMyon｜個人タクシー法令講座</a>
-    <nav>
-      <a href="#guide">学び方を選ぶ</a>
-      <a href="#curriculum">全20回の講座</a>
-      <a href="#about">講座について</a>
-      <a href="honshiken.html">本試験アーカイブ</a>
-      <a class="ext" href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTubeで学ぶ ↗</a>
-    </nav>
-  </div>
+  <div class="brand">ZiZiMyonの個人タクシー法令試験対策</div>
+  <h1>本試験問題アーカイブ</h1>
+  <p>問題・回答用紙・模範解答のPDFと、解説動画へのリンクをまとめたページです</p>
 </header>
+<main>
+  <div class="intro">
+    <p>個人タクシー法令試験の本試験問題を、年度・月ごとに整理して公開しています。各地区のPDFには「問題」「回答用紙」「模範解答」が1つにまとまっています。印刷して、時間を計って解く練習にお使いください。</p>
+    <p>まだ掲載できていない地区もあります。本試験問題を入手次第、今期分に限らず順次アップしていきます。</p>
+    <p class="note">※模範解答は、運輸局の公式発表ではなく、ZiZiMyonが現行法令等と照合して作成した個人の見解です。</p>
+  </div>
 
-<main id="main">
-
-  <!-- HERO -->
-  <div class="wrap hero">
-    <p class="for">個人タクシーを目指す、あなたへ。</p>
-    <h1>合格へ。その先の、<em>ひとり立ちへ。</em></h1>
-    <p class="sub">難しく見える法令も、ひとつずつ。<br>動画でつかみ、条文で確かめ、問題で身につける。</p>
-    <p class="from">現役個人タクシー事業者が届ける、学びの道案内。<br>ZiZiMyonの個人タクシー法令試験対策講座　学ぶ時間を、未来の力に。</p>
-    <div class="btns">
-      <a class="btn primary" href="#guide">自分に合う学び方へ →</a>
-      <a class="btn ghost" href="#curriculum">全20回の講座を見る ↓</a>
+  <h2 class="term">令和8年11月期</h2>
+  <p class="term-sub">順次公開しています。</p>
+  <div class="cards">
+    <div class="card">
+      <h3>近畿運輸局</h3>
+      <div class="date">大阪市域交通圏・北摂交通圏</div>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/kinki.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=uiaBdD09olA" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>東北運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/tohoku.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=yYNyh2ORO20" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>関東運輸局（特定指定地域・京浜）</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/kanto-keihin.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=9Jg7b8qZqXg" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>関東運輸局（その他地域）</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/kanto-chihou.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=YMvCHWRDsc4" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>関東運輸局（特定指定地域）</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/kanto.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=nxJL-Yrv7MU" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>九州運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/kyushu.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=sLPOYn5sp04" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>北海道運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/hokkaido.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=SmTdIjI81mk" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>北陸信越運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/hokuriku.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=AMKfjoIYtvM" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>四国運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/shikoku.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=6Aw6YT1oQu4" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>中部運輸局</h3>
+      <div class="links">
+        <a class="btn pdf" href="pdf/2026-11/chubu.pdf">PDFをダウンロード</a>
+        <a class="btn yt" href="https://www.youtube.com/watch?v=0fwNwPZTXNw" target="_blank" rel="noopener">YouTubeで見る</a>
+      </div>
     </div>
   </div>
 
-  <div class="wrap entries">
-    <div class="entry"><div class="no">01</div><a href="#curriculum">講座の流れを見る →</a></div>
-    <div class="entry"><div class="no">02</div><a href="#method">復習の進め方を見る →</a></div>
-    <div class="entry"><div class="no">03</div><a href="#practice">演習と教材の案内を見る →</a></div>
-  </div>
-
-  <!-- GUIDE -->
-  <section id="guide">
-    <div class="wrap">
-      <p class="kicker">Find your start</p>
-      <h2>いまの自分に、合う入口から。</h2>
-      <p class="lead">最初からでも、つまずいたところからでも。あなたのペースで進めましょう。</p>
-      <div class="guide-box">
-        <p class="kicker" style="margin-bottom:8px">Your study guide</p>
-        <label for="status">どこから始めるか、迷ったら。いまの状態を選ぶと、学習の入口をご案内します。<br>いまの学習状況は？</label>
-        <select id="status">
-          <option value="0" selected>これから勉強を始める</option>
-          <option value="1">勉強しているけれど、覚えられない</option>
-          <option value="2">試験に向けて、問題を解きたい</option>
-        </select>
-        <div class="guide-result">
-          <h3 id="guide-title">まずは、基礎編から。</h3>
-          <p id="guide-text">言葉の意味と法令の全体像をつかみましょう。動画を見た後は、お手元の教材でも確認を。</p>
-          <a id="guide-link" href="#curriculum">全20回の講座を見てみる →</a>
-        </div>
-      </div>
-    </div>
+  <section class="howto">
+    <h2>使い方</h2>
+    <ol>
+      <li>自分の受験する（した）地区のPDFをダウンロードして印刷します。</li>
+      <li>回答用紙のページを使って、本番のつもりで解いてみます。</li>
+      <li>模範解答で答え合わせをします。</li>
+      <li>×だった問題のくわしい解説は、YouTubeの解説動画で確認できます。</li>
+    </ol>
+    <p class="note">次の期（令和9年3月期など）は、期ごとの見出しを増やして同じ形で追加していきます。</p>
   </section>
-
-  <!-- CURRICULUM -->
-  <section id="curriculum" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">20 lessons, one journey</p>
-      <h2>ひとつずつ学ぶ。ちゃんと、つながる。</h2>
-      <p class="lead">基礎から実践、そして演習へ。知識を積み重ねていく、全20回の講座です。</p>
-      <div class="blocks">
-        <div class="block">
-          <span class="no">01</span>
-          <p class="range">第1〜6回 · 基礎編</p>
-          <h3>法令を読む、土台をつくる。</h3>
-          <p>用語や基本的な決まりを押さえ、条文を読むための準備を。焦らず、ここから始めましょう。</p>
-          <div class="tags"><span>基本用語</span><span>旅客自動車運送事業</span><span>記録の保存</span><span>基本条文</span></div>
-        </div>
-        <div class="block">
-          <span class="no">02</span>
-          <p class="range">第7〜14回 · 実践編</p>
-          <h3>決まりを、仕事と結びつける。</h3>
-          <p>手続き、運賃、旅客への対応。営業の場面を思い浮かべながら、決まりの意味を整理します。</p>
-          <div class="tags"><span>認可・届出</span><span>運送約款</span><span>運賃・料金</span><span>旅客への対応</span></div>
-        </div>
-        <div class="block">
-          <span class="no">03</span>
-          <p class="range">第15〜20回 · 応用編</p>
-          <h3>知識を確かめ、合格へつなぐ。</h3>
-          <p>報告や車両に関する決まりを学び、演習で理解を確認。曖昧なところを、もう一度見直します。</p>
-          <div class="tags"><span>事業報告</span><span>輸送実績</span><span>車両法</span><span>総仕上げ・演習</span></div>
-        </div>
-      </div>
-      <p class="center-link"><a class="btn primary" href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTubeで講座一覧を見る ↗</a></p>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section id="method" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">How to learn</p>
-      <h2>答えを覚える、その一歩先へ。</h2>
-      <p class="lead">「なぜ、その答えになるのか」。そこまで確かめる習慣が、言い回しの違う問題に向き合う力になります。</p>
-      <p class="lead" style="margin-top:12px">動画は、学習の補助教材です。所属先の勉強会やお手元の教材と組み合わせて活用してください。</p>
-      <div class="steps">
-        <div class="step">
-          <div class="no">01</div>
-          <h3>動画で、全体像をつかむ。</h3>
-          <p>まずは説明を聞いてみる。わからない言葉をひとつ拾うだけでも、前進です。</p>
-        </div>
-        <div class="step">
-          <div class="no">02</div>
-          <h3>条文で、根拠を確かめる。</h3>
-          <p>誰が、何を、いつまでに。「主語・義務・期限」を意識して読み直しましょう。</p>
-        </div>
-        <div class="step">
-          <div class="no">03</div>
-          <h3>問題で、理解を確かめる。</h3>
-          <p>正誤だけで終わらず、間違いの理由を自分の言葉で。つまずいたら、もう一度条文へ。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANGA -->
-  <section id="manga" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">Manga</p>
-      <h2>漫画で学ぶ</h2>
-      <div class="manga-list">
-        <div class="manga-item"><span class="name">田中さん補講編</span><a href="https://x.com/toukatsu_k/status/2091565356188066239?a=3KlAcvSDp-MQxSx26Eg&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-        <div class="manga-item"><span class="name">江戸っ子日浅と完璧くん編</span><a href="https://x.com/toukatsu_k/status/2059992766323761475?a=xUoon1z29RgCKOBXJa4&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-        <div class="manga-item"><span class="name">荒巻さんと白峰さん編</span><a href="https://x.com/toukatsu_k/status/2061124873288819064?a=x6RALlH1Tp3q8JvtzLw&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-        <div class="manga-item"><span class="name">池名井ハヤト編</span><a href="https://x.com/toukatsu_k/status/2055120039247008239?a=utatcwKB1lx4uCrR_7Y&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-      </div>
-      <h3 class="subhead">アフターストーリー</h3>
-      <div class="manga-list">
-        <div class="manga-item"><span class="name">田中さん編</span><a href="https://x.com/toukatsu_k/status/2045002003357835654?a=iNBUxaeB6gaSG2xtfYs&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-        <div class="manga-item"><span class="name">池名井ハヤト編</span><a href="https://x.com/toukatsu_k/status/2070694149586878625?a=4y4w5c89TKhY9fh3zWo&s=19" target="_blank" rel="noopener">Xで読む ↗</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRACTICE -->
-  <section id="practice" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">Practice &amp; keep learning</p>
-      <h2>学びを、毎日の習慣に。</h2>
-      <p class="lead">まとまった勉強時間にも、待機中の復習にも。</p>
-      <div class="cards">
-        <div class="card">
-          <p class="kind">Watch</p>
-          <h3>YouTubeで学ぶ</h3>
-          <p>全20回の講座動画を、YouTubeチャンネルで公開しています。</p>
-          <a href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTubeを開く ↗</a>
-        </div>
-        <div class="card">
-          <p class="kind">Study</p>
-          <h3>教材と演習で、理解を固める</h3>
-          <p>教材や演習のご案内は、Xの投稿でお知らせしています。</p>
-          <a href="https://x.com/toukatsu_k/status/2109929408991760473?a=HtBfwYUN68qVQ02nxtc&s=19" target="_blank" rel="noopener">教材案内を開く ↗</a>
-        </div>
-        <div class="card">
-          <p class="kind">Follow</p>
-          <h3>日々の学びを、Xで追う</h3>
-          <p>日々の学びやお知らせは、Xで発信しています。</p>
-          <a href="https://x.com/toukatsu_k" target="_blank" rel="noopener">Xの投稿を見る ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ARCHIVE -->
-  <section id="archive" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">Exam archive</p>
-      <h2>本試験問題アーカイブ</h2>
-      <p class="lead">本試験問題を、年度・月ごとに整理して公開しています。各地区の「問題・回答用紙・模範解答」を1つのPDFにまとめ、無料でダウンロードできます。解説動画へのリンク付きです。</p>
-      <p class="center-link"><a class="btn primary" href="honshiken.html">本試験問題アーカイブを見る →</a></p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">A note from ZiZiMyon</p>
-      <div class="about-note">
-        <p class="big">覚えるだけでは、もったいない。<br>その知識を、あなたの仕事の力に。</p>
-        <p style="color:var(--muted)">個人タクシーを目指す仲間へ。</p>
-      </div>
-      <div class="about-body">
-        <p class="kicker">Beyond the exam</p>
-        <h2>合格は、新しい仕事の出発点。</h2>
-        <p>独立してからも、法令は日々の仕事を支える大切な土台です。試験のための知識を、営業の現場で使える理解へつなげてほしい。そんな思いで、この講座を届けています。</p>
-        <p>難しい言葉も、制度の趣旨も、できるだけわかりやすく。現役の個人タクシー事業者として、これから一歩を踏み出す皆さんの学習を応援します。</p>
-        <p class="sign">ZiZiMyon　個人タクシー事業者 / 法令学習コンテンツ発信</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="padding-top:20px">
-    <div class="wrap">
-      <p class="kicker">Questions &amp; answers</p>
-      <h2>学習を始める前に。</h2>
-      <div class="faq-list">
-        <details>
-          <summary>初めて法令を勉強します。ついていけますか？</summary>
-          <p>まずは基礎編から、言葉に慣れるつもりで始めてみてください。一度で全部を理解する必要はありません。動画とお手元の教材を行き来しながら、少しずつ進めましょう。</p>
-        </details>
-        <details>
-          <summary>動画だけ見れば、試験対策は十分ですか？</summary>
-          <p>動画は、勉強会や自主学習を助ける補助教材です。受験する地域の出題範囲を確認し、最新の教材・条文・問題演習と組み合わせてください。</p>
-        </details>
-        <details>
-          <summary>試験日や受験条件は、どこで確認できますか？</summary>
-          <p>受験する地域を管轄する運輸局・沖縄総合事務局の公式公示を確認してください。試験日程や要件の判断は、このページやSNSの情報だけで行わず、窓口や所属先にも確認しましょう。</p>
-        </details>
-        <details>
-          <summary>古い動画と、最新の教材で内容が違うときは？</summary>
-          <p>法令や通達は改正される場合があります。動画の公開時期を確認し、現在の条文・公示・最新の試験用教材を優先してください。不明点は勉強会などで確認し、根拠を整理しておきましょう。</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL -->
-  <div class="wrap final">
-    <p class="kicker">Let's start learning</p>
-    <h2>今日のひとつが、未来の自信になる。</h2>
-    <p class="lead" style="margin-bottom:28px">まずは一本。自分のペースで、始めてみませんか。</p>
-    <a class="btn primary" href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTubeで講座を見る ↗</a>
-  </div>
-
 </main>
-
-<footer>
-  <div class="wrap footer-in">
-    <span>ZiZiMyonの個人タクシー法令試験対策講座</span>
-    <div class="footer-links">
-      <a href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTube ↗</a>
-      <a href="https://x.com/toukatsu_k" target="_blank" rel="noopener">X ↗</a>
-      <a href="#faq">よくある質問</a>
-      <a href="#">ページの先頭 ↑</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  var guideData = [
-    {
-      title: "まずは、基礎編から。",
-      text: "言葉の意味と法令の全体像をつかみましょう。動画を見た後は、お手元の教材でも確認を。",
-      linkText: "全20回の講座を見てみる →",
-      linkHref: "#curriculum"
-    },
-    {
-      title: "「なぜ？」を確かめる復習へ。",
-      text: "覚えにくいところは、主語・義務・期限に分けて整理。答えの根拠まで戻ってみましょう。",
-      linkText: "復習の進め方を見る →",
-      linkHref: "#method"
-    },
-    {
-      title: "演習で、理解を確かめましょう。",
-      text: "受験する地域の問題で確認し、間違えた箇所は条文へ。教材案内から演習の入口を探せます。",
-      linkText: "教材と演習の案内へ →",
-      linkHref: "#practice"
-    }
-  ];
-  var sel = document.getElementById("status");
-  sel.addEventListener("change", function(){
-    var d = guideData[Number(sel.value)];
-    document.getElementById("guide-title").textContent = d.title;
-    document.getElementById("guide-text").textContent = d.text;
-    var link = document.getElementById("guide-link");
-    link.textContent = d.linkText;
-    link.setAttribute("href", d.linkHref);
-  });
-</script>
-
+<footer>ZiZiMyonの個人タクシー法令試験対策</footer>
 </body>
 </html>
