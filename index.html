@@ -135,6 +135,8 @@
   }
   /* practice cards */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .cards.two{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:760px){ .cards.two{grid-template-columns:1fr} }
   @media (max-width:760px){ .cards{grid-template-columns:1fr} }
   .card{background:var(--navy);color:#fff;border-radius:16px;padding:28px}
   .card .kind{color:var(--gold);letter-spacing:.24em;font-size:12px;font-weight:700;margin-bottom:10px}
@@ -315,18 +317,12 @@
       <p class="kicker">Practice &amp; keep learning</p>
       <h2>学びを、毎日の習慣に。</h2>
       <p class="lead">まとまった勉強時間にも、待機中の復習にも。</p>
-      <div class="cards">
+      <div class="cards two">
         <div class="card">
           <p class="kind">Watch</p>
           <h3>YouTubeで学ぶ</h3>
           <p>全20回の講座動画を、YouTubeチャンネルで公開しています。</p>
           <a href="https://youtube.com/@zizimyon" target="_blank" rel="noopener">YouTubeを開く ↗</a>
-        </div>
-        <div class="card">
-          <p class="kind">Study</p>
-          <h3>教材と演習で、理解を固める</h3>
-          <p>教材や演習のご案内は、Xの投稿でお知らせしています。</p>
-          <a href="https://x.com/toukatsu_k/status/2109929408991760473?a=HtBfwYUN68qVQ02nxtc&s=19" target="_blank" rel="noopener">教材案内を開く ↗</a>
         </div>
         <div class="card">
           <p class="kind">Follow</p>
